@@ -1,16 +1,9 @@
-import { useEffect } from "react";
-import { useSelector } from "react-redux/es/exports";
-import { useNavigate } from 'react-router-dom';
+
+import { useLogOutRedirect } from "../hoks/useLogOutRedirect";
+
 
 export const DashboardPage = () => {
-    const navigate = useNavigate();
-    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
-
-    useEffect(() => {
-       if(!isLoggedIn) {
-        navigate('/login', {replace: true});
-       }
-    }, [isLoggedIn, navigate]);
+    useLogOutRedirect();
 
     return(
       <div>Dashboard</div>
