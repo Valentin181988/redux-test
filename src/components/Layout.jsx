@@ -1,14 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import { Link } from './Layout.styled';
+import { AppBar } from './AppBar';
 
 export const Layout = () => {
     return (
         <div>
-            <nav>
-                <Link to="/login">Log in</Link>
-                <Link to="/counter">Counter</Link>
-            </nav>
-            <hr />
+            <AppBar />            
             <Outlet />
         </div>
 
