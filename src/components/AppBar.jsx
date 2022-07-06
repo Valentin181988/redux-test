@@ -15,7 +15,8 @@ export const AppBar = () => {
              marginBottom: 12}}
         >
             <nav>
-                <Link to="/login">Log in</Link>
+                {!isLoggedIn && <Link to="/login">Log in</Link>}
+                {isLoggedIn && <Link to="/dashboard">Dashboard</Link>}
                 <Link to="/counter">Counter</Link>
             </nav>
             {isLoggedIn && <UserMenu />}  
