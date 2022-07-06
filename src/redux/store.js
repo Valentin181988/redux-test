@@ -1,11 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { myValueSlice } from './slices/counterSlice';
+import { itemSlice } from './slices/itemSlice';
+import { userSlice } from './slices/userSlice';
 /* import { createAction, createReducer, createSlice } from '@reduxjs/toolkit'; */
 
 export const store = configureStore({
     reducer: {
       myValue: myValueSlice.reducer,
-      /* items: itemSlice.actions, */
+      items: itemSlice.reducer,
+      user: userSlice.reducer,
     },
   });
 
