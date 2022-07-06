@@ -1,5 +1,13 @@
+import { useSelector, useDispatch } from "react-redux/es/exports";
+import { logOut } from "../redux/slices/userSlice"; 
+
 export const UserMenu = () => {
+  const dispatch = useDispatch();
+  const login = useSelector(state => state.user.login)
     return (
-      <div>User menu</div>
+      <div>
+        {login}
+        <button type="button" onClick={() => dispatch(logOut())}>Log out</button>
+      </div>
     );
 };
